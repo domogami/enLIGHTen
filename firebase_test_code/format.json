@@ -1,0 +1,23 @@
+{
+    "Switch_1":{
+        "Switch_status":"On",
+        "ML_status":"Enabled"
+    },
+    "Switch_2":{
+        "Switch_status":"On",
+        "ML_status":"Enabled"
+    },
+    "Switch_3":{
+        "Switch_status":"On",
+        "ML_status":"Enabled"
+    },
+    "Switch_4": {
+        "Switch_status":"On",
+        "ML_status":"Enabled"
+    }
+}
+
+
+
+
+

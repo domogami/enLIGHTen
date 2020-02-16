@@ -14,14 +14,34 @@ firebase_admin.initialize_app(cred, {
     'databaseURL': 'https://enlightenment-31974.firebaseio.com/'
 })
 
+class Switch:
+    def __init__(self, name, ML_status, Switch_status):
+        self.name = name
+        self.ML_status = ML_status
+        self.Switch_status = Switch_status
+
+    def push_switch_status(self):
+        info = ref.child(self.name)
+        if(info.get()['Switch_status'] == 'ON'):
+            info.update({"Switch_status":"OFF"})
+            print(self.name + " switched OFF")
+        else:
+            info.update({"Switch_status":"ON"})
+            print(self.name + " switched ON")
+
+    def get_switch_status(self):
+        info = ref.child(self.name)
+        
+    def return_info(self):
+        return ref.get()[self.name]
+    
+
 # As an admin, the app has access to read and write all data, regradless of Security Rules
 ref = db.reference('/') #This will edit the root folder, you can do more subfolders and etc
-i = 0
-for i in range(10):
-    time.sleep(1)
-    item = ref.get()
-    try:
-        print("Switch1" + item['Switch1'])
-    except:
-        print("doesn't exist")
-    ref.update({"Switch1": i})
+Switch_1 = Switch("Switch_1", "Enabled", "On")
+Switch_2 = Switch("Switch_2", "Enabled", "On")
+Switch_3 = Switch("Switch_3", "Enabled", "On")
+Switch_4 = Switch("Switch_4", "Enabled", "On")
+
+Switch_2.push_switch_status()
+

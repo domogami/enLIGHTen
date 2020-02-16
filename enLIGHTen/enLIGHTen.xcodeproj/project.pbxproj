@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D670DA6923F0A31C008FF299 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = D670DA6823F0A31C008FF299 /* Home.swift */; };
 		D69088D623ECC9F1008FC90B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69088D523ECC9F1008FC90B /* AppDelegate.swift */; };
 		D69088D823ECC9F1008FC90B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69088D723ECC9F1008FC90B /* SceneDelegate.swift */; };
 		D69088DB23ECC9F1008FC90B /* enLIGHTen.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D69088D923ECC9F1008FC90B /* enLIGHTen.xcdatamodeld */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D670DA6823F0A31C008FF299 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		D69088D223ECC9F1008FC90B /* enLIGHTen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = enLIGHTen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D69088D523ECC9F1008FC90B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D69088D723ECC9F1008FC90B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				D69088E623ECC9F4008FC90B /* Info.plist */,
 				D69088D923ECC9F1008FC90B /* enLIGHTen.xcdatamodeld */,
 				D69088E023ECC9F4008FC90B /* Preview Content */,
+				D670DA6823F0A31C008FF299 /* Home.swift */,
 			);
 			path = enLIGHTen;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 			files = (
 				D69088D623ECC9F1008FC90B /* AppDelegate.swift in Sources */,
 				D69088DB23ECC9F1008FC90B /* enLIGHTen.xcdatamodeld in Sources */,
+				D670DA6923F0A31C008FF299 /* Home.swift in Sources */,
 				D69088DD23ECC9F1008FC90B /* ContentView.swift in Sources */,
 				D69088D823ECC9F1008FC90B /* SceneDelegate.swift in Sources */,
 			);

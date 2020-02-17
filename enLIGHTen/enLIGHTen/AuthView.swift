@@ -32,6 +32,7 @@ struct SignInView : View {
     var body: some View {
         
         ZStack {
+            // Fancy Green Background
             VStack {
                 Spacer()
             }
@@ -80,6 +81,7 @@ struct SignInView : View {
                     .padding(.horizontal, 20)
                     .background(Color.white)
                     .cornerRadius(50)
+                    
                     .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 12)
                     .shadow(color: Color.black.opacity(0.1), radius: 1, x: 0, y: 1)
                 
@@ -112,7 +114,7 @@ struct SignInView : View {
                         .cornerRadius(50)
                         .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 12)
                         .shadow(color: Color.black.opacity(0.1), radius: 1, x: 0, y: 1)
-                        
+                    
                 }
                 .offset(y: 50)
                 if (error != "") {
@@ -131,7 +133,8 @@ struct SignInView : View {
             .offset(y: -30)
             
             // Bottom Button
-            NavigationLink(destination: SignUpView()) {
+            NavigationLink(
+            destination: SignUpView()) {
                 Text("Create An Account")
                     .font(.system(size: 20, weight: .regular, design: .default))
                     .foregroundColor(Color.white)
@@ -141,10 +144,11 @@ struct SignInView : View {
                     .cornerRadius(50)
                     .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 12)
                     .shadow(color: Color.black.opacity(0.1), radius: 1, x: 0, y: 1)
-                    // HARD CODE
- 
+                // HARD CODE
+                
             }
             .offset(y: 330)
+            .animation(.easeInOut)
             
         }
         
@@ -172,24 +176,106 @@ struct SignUpView: View {
     
     var body: some View {
         
-        VStack {
+        ZStack {
+            // Fancy Green Background
             VStack {
-                Text("Create Account")
+                Spacer()
+            }
+            .frame(width: screen.width, height: screen.height, alignment: .top)
+            .frame(maxWidth: .infinity, maxHeight: screen.height)
+            .background(Color.green)
+            .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
+            .shadow(color: Color.green.opacity(0.3), radius: 20, x: 0, y: 20)
+            .offset(y: -(screen.height / 2))
+            
+            VStack {
+                Text("Sign Up")
+                    .foregroundColor(.white)
+                    .font(.system(size: 40, weight: .medium, design: .default))
+                    .padding(.horizontal, 40)
+                    .padding(.top, 5)
                 
-                Text("Sign up to get Started")
+                Spacer()
+            }
+            
+            VStack {
+                HStack {
+                    Image(systemName: "lightbulb")
+                        .font(.system(size: 40, weight: .regular, design: .default))
+                        .frame(width: 90, height: 90)
+                    
+                }
+                .background(Color.white)
+                .cornerRadius(50)
+                .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 12)
+                .shadow(color: Color.black.opacity(0.1), radius: 1, x: 0, y: 1)
+                .padding(.top, 40)
+                .padding(.bottom, 10)
                 
-                TextField("Email", text: $email)
+                HStack {
+                    Text("Email Address")
+                    Spacer()
+                }
+                .padding(20)
+                .padding(.horizontal, 20)
+                
+                TextField("example@gmail.com", text: $email)
+                    .frame(width: screen.width - 200)
+                    .padding(15)
+                    .padding(.horizontal, 20)
+                    .background(Color.white)
+                    .cornerRadius(50)
+                    
+                    .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 12)
+                    .shadow(color: Color.black.opacity(0.1), radius: 1, x: 0, y: 1)
+                
+                HStack {
+                    Text("Password")
+                    Spacer()
+                }
+                .padding(20)
+                .padding(.horizontal, 20)
+                
                 
                 SecureField("Password", text: $password)
+                    .frame(width: screen.width - 200)
+                    .padding(15)
+                    .padding(.horizontal, 20)
+                    .background(Color.white)
+                    .cornerRadius(50)
+                    .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 12)
+                    .shadow(color: Color.black.opacity(0.1), radius: 1, x: 0, y: 1)
                 
+                
+                Button(action: signUp) {
+                    Text("Create Account")
+                        .font(.system(size: 20, weight: .regular, design: .default))
+                        
+                        .foregroundColor(Color.white)
+                        .padding(10)
+                        .padding(.horizontal, 20)
+                        .background(Color.green)
+                        .cornerRadius(50)
+                        .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 12)
+                        .shadow(color: Color.black.opacity(0.1), radius: 1, x: 0, y: 1)
+                    
+                }
+                .offset(y: 50)
+                if (error != "") {
+                    Text(error)
+                        .offset(y: -30)
+                }
+                
+                
+                Spacer()
             }
-            Button (action: signUp) {
-                Text("Create Account")
-            }
-            if(error != "") {
-                Text(error)
-            }
- 
+            .frame(width: screen.width - 60, height: screen.height * 2 / 3)
+            .background(Color.white)
+            .clipShape(RoundedRectangle(cornerRadius: 50, style: .continuous))
+            .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 12)
+            .shadow(color: Color.black.opacity(0.1), radius: 1, x: 0, y: 1)
+            .offset(y: -30)
+            
         }
     }
 }

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		B313F510798A1861D8A95733 /* Pods_enLIGHTen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C7C2CC5F0504762418BFD7D /* Pods_enLIGHTen.framework */; };
 		D643947923F9354200F7CF0E /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D643947823F9354200F7CF0E /* AuthView.swift */; };
-		D670DA6923F0A31C008FF299 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = D670DA6823F0A31C008FF299 /* Home.swift */; };
 		D69088D623ECC9F1008FC90B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69088D523ECC9F1008FC90B /* AppDelegate.swift */; };
 		D69088D823ECC9F1008FC90B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69088D723ECC9F1008FC90B /* SceneDelegate.swift */; };
 		D69088DB23ECC9F1008FC90B /* enLIGHTen.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D69088D923ECC9F1008FC90B /* enLIGHTen.xcdatamodeld */; };
@@ -26,7 +25,6 @@
 		546FD66B524D50A9292BB9A5 /* Pods-enLIGHTen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-enLIGHTen.debug.xcconfig"; path = "Target Support Files/Pods-enLIGHTen/Pods-enLIGHTen.debug.xcconfig"; sourceTree = "<group>"; };
 		A56BA639A1B39349FA059A2A /* Pods-enLIGHTen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-enLIGHTen.release.xcconfig"; path = "Target Support Files/Pods-enLIGHTen/Pods-enLIGHTen.release.xcconfig"; sourceTree = "<group>"; };
 		D643947823F9354200F7CF0E /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
-		D670DA6823F0A31C008FF299 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		D69088D223ECC9F1008FC90B /* enLIGHTen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = enLIGHTen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D69088D523ECC9F1008FC90B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D69088D723ECC9F1008FC90B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,7 +99,6 @@
 				D69088E623ECC9F4008FC90B /* Info.plist */,
 				D69088D923ECC9F1008FC90B /* enLIGHTen.xcdatamodeld */,
 				D69088E023ECC9F4008FC90B /* Preview Content */,
-				D670DA6823F0A31C008FF299 /* Home.swift */,
 			);
 			path = enLIGHTen;
 			sourceTree = "<group>";
@@ -233,7 +230,6 @@
 				D69088D623ECC9F1008FC90B /* AppDelegate.swift in Sources */,
 				D69088DB23ECC9F1008FC90B /* enLIGHTen.xcdatamodeld in Sources */,
 				D6B1067E23F5787400D6EECC /* SessionStore.swift in Sources */,
-				D670DA6923F0A31C008FF299 /* Home.swift in Sources */,
 				D69088DD23ECC9F1008FC90B /* ContentView.swift in Sources */,
 				D69088D823ECC9F1008FC90B /* SceneDelegate.swift in Sources */,
 				D643947923F9354200F7CF0E /* AuthView.swift in Sources */,

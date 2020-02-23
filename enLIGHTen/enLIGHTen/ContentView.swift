@@ -7,9 +7,14 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct ContentView: View {
     @EnvironmentObject var session: SessionStore
+    
+    //var rootRef = Database.database().reference()
+    let rootRef = Database.database().reference(fromURL: "https://enlightenment-31974.firebaseio.com/")
+    var messageRef: DatabaseReference!
     
     func getUser () {
         session.listen()
@@ -44,22 +49,33 @@ struct ContentView: View {
                     }
                     VStack {
                         HStack {
-                            Text("Switch 1")
+                            VStack {
+                                Button(action: {
+                                    self.rootRef.child("Switch_1/Switch_status").setValue("On")
+                                }) {
+                                    Text("Switch 1 On")
+                                }
+                                Button(action: {
+                                    self.rootRef.child("Switch_1/Switch_status").setValue("OFF")
+                                }) {
+                                    Text("Switch 1 off")
+                                }
+                            }
                             Image(systemName: "lightbulb")
                                 .font(.system(size: 24, weight: .semibold))
                         }
                         .padding(20)
-                        .background(Color.green)
+                        .background(Color("accent"))
                     }
                 }
                 .padding(.top, 44)
                 .background(
                         VStack {
-                            LinearGradient(gradient: Gradient(colors: [Color("background2"), Color.white]), startPoint: .top, endPoint: .bottom)
+                            LinearGradient(gradient: Gradient(colors: [Color("background2"), Color("background3")]), startPoint: .top, endPoint: .bottom)
                                 .frame(height: 200)
                             Spacer()
                         }
-                        .background(Color.white)
+                        .background(Color("background3"))
                     )
                     .edgesIgnoringSafeArea(.all)
                 

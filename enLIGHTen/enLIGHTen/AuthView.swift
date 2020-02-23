@@ -38,14 +38,14 @@ struct SignInView : View {
             }
             .frame(width: screen.width, height: screen.height, alignment: .top)
             .frame(maxWidth: .infinity, maxHeight: screen.height)
-            .background(Color.green)
+            .background(Color("accent"))
             .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
-            .shadow(color: Color.green.opacity(0.3), radius: 20, x: 0, y: 20)
+            .shadow(color: Color("accent").opacity(0.3), radius: 20, x: 0, y: 20)
             .offset(y: -(screen.height / 2))
             
             VStack (spacing: 20) {
                 Text("enLIGHTen")
-                    .foregroundColor(.white)
+                    .foregroundColor(Color("background3"))
                     .font(.system(size: 40, weight: .medium, design: .default))
                     .padding(.horizontal, 40)
                     .padding(.top, 16)
@@ -61,7 +61,7 @@ struct SignInView : View {
                         .frame(width: 90, height: 90)
                     
                 }
-                .background(Color.white)
+                .background(Color("background3"))
                 .cornerRadius(50)
                 .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 12)
                 .shadow(color: Color.black.opacity(0.1), radius: 1, x: 0, y: 1)
@@ -79,7 +79,7 @@ struct SignInView : View {
                     .frame(width: screen.width - 200)
                     .padding(15)
                     .padding(.horizontal, 20)
-                    .background(Color.white)
+                    .background(Color("background3"))
                     .cornerRadius(50)
                     
                     .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 12)
@@ -97,7 +97,7 @@ struct SignInView : View {
                     .frame(width: screen.width - 200)
                     .padding(15)
                     .padding(.horizontal, 20)
-                    .background(Color.white)
+                    .background(Color("background3"))
                     .cornerRadius(50)
                     .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 12)
                     .shadow(color: Color.black.opacity(0.1), radius: 1, x: 0, y: 1)
@@ -107,10 +107,10 @@ struct SignInView : View {
                     Text("Sign in")
                         .font(.system(size: 20, weight: .regular, design: .default))
                         
-                        .foregroundColor(Color.white)
+                        .foregroundColor(Color("background3"))
                         .padding(10)
                         .padding(.horizontal, 20)
-                        .background(Color.green)
+                        .background(Color("accent"))
                         .cornerRadius(50)
                         .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 12)
                         .shadow(color: Color.black.opacity(0.1), radius: 1, x: 0, y: 1)
@@ -126,7 +126,7 @@ struct SignInView : View {
                 Spacer()
             }
             .frame(width: screen.width - 60, height: screen.height * 2 / 3)
-            .background(Color.white)
+            .background(Color("background3"))
             .clipShape(RoundedRectangle(cornerRadius: 50, style: .continuous))
             .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 12)
             .shadow(color: Color.black.opacity(0.1), radius: 1, x: 0, y: 1)
@@ -137,10 +137,10 @@ struct SignInView : View {
             destination: SignUpView()) {
                 Text("Create An Account")
                     .font(.system(size: 20, weight: .regular, design: .default))
-                    .foregroundColor(Color.white)
+                    .foregroundColor(Color("background3"))
                     .padding(10)
                     .padding(.horizontal, 20)
-                    .background(Color.green)
+                    .background(Color("accent"))
                     .cornerRadius(50)
                     .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 12)
                     .shadow(color: Color.black.opacity(0.1), radius: 1, x: 0, y: 1)
@@ -183,14 +183,14 @@ struct SignUpView: View {
             }
             .frame(width: screen.width, height: screen.height, alignment: .top)
             .frame(maxWidth: .infinity, maxHeight: screen.height)
-            .background(Color.green)
+            .background(Color("accent"))
             .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
-            .shadow(color: Color.green.opacity(0.3), radius: 20, x: 0, y: 20)
+            .shadow(color: Color("accent").opacity(0.3), radius: 20, x: 0, y: 20)
             .offset(y: -(screen.height / 2))
             
             VStack {
                 Text("Sign Up")
-                    .foregroundColor(.white)
+                    .foregroundColor(Color("background3"))
                     .font(.system(size: 40, weight: .medium, design: .default))
                     .padding(.horizontal, 40)
                     .padding(.top, 5)
@@ -205,7 +205,7 @@ struct SignUpView: View {
                         .frame(width: 90, height: 90)
                     
                 }
-                .background(Color.white)
+                .background(Color("background3"))
                 .cornerRadius(50)
                 .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 12)
                 .shadow(color: Color.black.opacity(0.1), radius: 1, x: 0, y: 1)
@@ -223,7 +223,7 @@ struct SignUpView: View {
                     .frame(width: screen.width - 200)
                     .padding(15)
                     .padding(.horizontal, 20)
-                    .background(Color.white)
+                    .background(Color("background3"))
                     .cornerRadius(50)
                     
                     .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 12)
@@ -241,7 +241,7 @@ struct SignUpView: View {
                     .frame(width: screen.width - 200)
                     .padding(15)
                     .padding(.horizontal, 20)
-                    .background(Color.white)
+                    .background(Color("background3"))
                     .cornerRadius(50)
                     .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 12)
                     .shadow(color: Color.black.opacity(0.1), radius: 1, x: 0, y: 1)
@@ -251,10 +251,10 @@ struct SignUpView: View {
                     Text("Create Account")
                         .font(.system(size: 20, weight: .regular, design: .default))
                         
-                        .foregroundColor(Color.white)
+                        .foregroundColor(Color("background3"))
                         .padding(10)
                         .padding(.horizontal, 20)
-                        .background(Color.green)
+                        .background(Color("accent"))
                         .cornerRadius(50)
                         .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 12)
                         .shadow(color: Color.black.opacity(0.1), radius: 1, x: 0, y: 1)
@@ -270,7 +270,7 @@ struct SignUpView: View {
                 Spacer()
             }
             .frame(width: screen.width - 60, height: screen.height * 2 / 3)
-            .background(Color.white)
+            .background(Color("background3"))
             .clipShape(RoundedRectangle(cornerRadius: 50, style: .continuous))
             .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 12)
             .shadow(color: Color.black.opacity(0.1), radius: 1, x: 0, y: 1)

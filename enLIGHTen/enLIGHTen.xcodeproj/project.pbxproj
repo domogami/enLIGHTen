@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B313F510798A1861D8A95733 /* Pods_enLIGHTen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C7C2CC5F0504762418BFD7D /* Pods_enLIGHTen.framework */; };
+		D60061452406681400BEFFCC /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60061442406681400BEFFCC /* Test.swift */; };
 		D643947923F9354200F7CF0E /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D643947823F9354200F7CF0E /* AuthView.swift */; };
 		D69088D623ECC9F1008FC90B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69088D523ECC9F1008FC90B /* AppDelegate.swift */; };
 		D69088D823ECC9F1008FC90B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69088D723ECC9F1008FC90B /* SceneDelegate.swift */; };
@@ -24,6 +25,7 @@
 		4C7C2CC5F0504762418BFD7D /* Pods_enLIGHTen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_enLIGHTen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		546FD66B524D50A9292BB9A5 /* Pods-enLIGHTen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-enLIGHTen.debug.xcconfig"; path = "Target Support Files/Pods-enLIGHTen/Pods-enLIGHTen.debug.xcconfig"; sourceTree = "<group>"; };
 		A56BA639A1B39349FA059A2A /* Pods-enLIGHTen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-enLIGHTen.release.xcconfig"; path = "Target Support Files/Pods-enLIGHTen/Pods-enLIGHTen.release.xcconfig"; sourceTree = "<group>"; };
+		D60061442406681400BEFFCC /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		D643947823F9354200F7CF0E /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		D69088D223ECC9F1008FC90B /* enLIGHTen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = enLIGHTen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D69088D523ECC9F1008FC90B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				D69088D723ECC9F1008FC90B /* SceneDelegate.swift */,
 				D69088DC23ECC9F1008FC90B /* ContentView.swift */,
 				D643947823F9354200F7CF0E /* AuthView.swift */,
+				D60061442406681400BEFFCC /* Test.swift */,
 				D6B1067D23F5787400D6EECC /* SessionStore.swift */,
 				D69088DE23ECC9F4008FC90B /* Assets.xcassets */,
 				D69088E323ECC9F4008FC90B /* LaunchScreen.storyboard */,
@@ -230,6 +233,7 @@
 				D69088D623ECC9F1008FC90B /* AppDelegate.swift in Sources */,
 				D69088DB23ECC9F1008FC90B /* enLIGHTen.xcdatamodeld in Sources */,
 				D6B1067E23F5787400D6EECC /* SessionStore.swift in Sources */,
+				D60061452406681400BEFFCC /* Test.swift in Sources */,
 				D69088DD23ECC9F1008FC90B /* ContentView.swift in Sources */,
 				D69088D823ECC9F1008FC90B /* SceneDelegate.swift in Sources */,
 				D643947923F9354200F7CF0E /* AuthView.swift in Sources */,

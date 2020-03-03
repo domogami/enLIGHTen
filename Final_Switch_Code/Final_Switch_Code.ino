@@ -55,19 +55,18 @@ void turn_off(){
 void loop() {
   if (button1.pressed) {
       if(0 == switch_position){
-        Serial.printf("Turning switch on");
+        //Serial.printf("Turning switch on");
         turn_on();
-        //switch_position = 1;
+        switch_position = 1;
         button1.pressed = false;
+        //Here, you would need to send a signal to the pi that the switch is now on
       }
-  }
-      
-   if (button1.pressed) {
-      if(1 == switch_position){
-        Serial.printf("Turning switch off");
+      else {
+        //Serial.printf("Turning switch off");
         turn_off();
-        //switch_position = 0;
+        switch_position = 0;
         button1.pressed = false;
+        //here, send a signal that the switch is now off
       }
   }
 }

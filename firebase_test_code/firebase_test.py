@@ -19,17 +19,19 @@ class Switch:
         self.name = name
         self.ML_status = "UNINITIALIZED"
         self.Switch_status = "UNINITIALIZED"
-        self.check_switch_status()
+        self.check_switch_status() #initialize the local switches with the correct states
 
     def push_Switch_status(self):
         ref = db.reference('/')
         info = ref.child('Switches').child(self.name)
         if(info.get()['Switch_status'] == 'ON'):
             info.update({"Switch_status":"OFF"})
+            self.Switch_status = "OFF"
             print(self.name + " switched OFF")
             return
         if(info.get()['Switch_status'] == 'OFF'):
             info.update({"Switch_status":"ON"})
+            self.Switch_status = "ON"
             print(self.name + " switched ON")
             return
 
@@ -38,9 +40,11 @@ class Switch:
         info = ref.child('Switches').child(self.name)
         if info.get()['ML_status'] == 'ENABLED':
             info.update({"ML_status":"DISABLED"})
+            self.ML_status = "DISABLED"
             print(self.name + " DISABLED")
             return
         if info.get()['ML_status'] == 'DISABLED':
+            self.ML_status = "ENABLED"
             info.update({"ML_status":"ENABLED"})
             print(self.name + " ENABLED")
             return

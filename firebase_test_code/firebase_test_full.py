@@ -5,22 +5,29 @@ from firebase_admin import credentials
 from firebase_admin import db
 from bluepy import btle
 import binascii
-import copy
 
 #Configuration of 3 ESP32's
 print("Connecting to ESP32_1...")
 dev = btle.Peripheral("98:F4:AB:6D:2C:86")
+dev.waitForNotifications(5)
 print("Connecting to ESP32_2...")
 dev2 = btle.Peripheral("FC:F5:C4:0E:53:4A")
+dev2.waitForNotifications(5)
 print("Connecting to ESP32_3...")
 dev3 = btle.Peripheral("98:F4:AB:6E:61:42")
+dev3.waitForNotifications(5)
 
 #Service UUID used by all ESP32's
 ESP32 = btle.UUID("6E400001-B5A3-F393-E0A9-E50E24DCCA9E")
-
+print("service 1")
 ESP32Service = dev.getServiceByUUID(ESP32)
+time.sleep(1)
+print("servcice 2")
 ESP32Service2 = dev2.getServiceByUUID(ESP32)
+time.sleep(1)
+print("service 3")
 ESP32Service3 = dev3.getServiceByUUID(ESP32)
+time.sleep(1)
 
 #Write configuration for all ESP32's
 uuidConfig = btle.UUID("6E400002-B5A3-F393-E0A9-E50E24DCCA9E")
@@ -36,12 +43,12 @@ ESP32Value = ESP32Service.getCharacteristics(uuidValue)[0]
 ESP32Value2 = ESP32Service2.getCharacteristics(uuidValue)[0]
 ESP32Value3 = ESP32Service3.getCharacteristics(uuidValue)[0]
 
-val = binascii.hexlify(ESP32Value.read())
-print("ESP 32 value: ", val.decode('utf-8'))
-val2 = binascii.hexlify(ESP32Value2.read())
-print("ESP 32 value: ", val2.decode('utf-8'))
-val3 = binascii.hexlify(ESP32Value3.read())
-print("ESP 32 value3: ", val3.decode('utf-8'))
+#val = binascii.hexlify(ESP32Value.read())
+#print("ESP 32 value: ", val.decode('utf-8'))
+#val2 = binascii.hexlify(ESP32Value2.read())
+#print("ESP 32 value: ", val2.decode('utf-8'))
+#val3 = binascii.hexlify(ESP32Value3.read())
+#print("ESP 32 value3: ", val3.decode('utf-8'))
 
 #switch = "ON"
 #ESP32Config.write(bytes(switch, encoding='utf-8'))
@@ -99,9 +106,12 @@ class Switch:
             print("ADD CODE HERE TO ENABLE OR DISABLE MACHINE LEARNING")
         if self.Switch_status != info.get()['Switch_status']:
             self.Switch_status = info.get()['Switch_status']
-            ESP32Config.write(bytes(info.get()['Switch_status'], encoding='utf-8'))
-            ESP32Config2.write(bytes(info.get()['Switch_status'], encoding='utf-8'))
-            ESP32Config3.write(bytes(info.get()['Switch_status'], encoding='utf-8'))
+            if (self.name == "Switch_1"):
+                ESP32Config.write(bytes(info.get()['Switch_status'], encoding='utf-8'))
+            if (self.name == "Switch_2"):
+                ESP32Config2.write(bytes(info.get()['Switch_status'], encoding='utf-8'))
+            if (self.name == "Switch_3"):
+                ESP32Config3.write(bytes(info.get()['Switch_status'], encoding='utf-8'))
             print("TELL THE ESP32 to change states")
 
 
@@ -117,12 +127,15 @@ ref = db.reference('/') #This will edit the root folder, you can do more subfold
 Switch_1 = Switch("Switch_1")
 Switch_2 = Switch("Switch_2")
 Switch_3 = Switch("Switch_3")
-Switch_1.push_Switch_status()
-Switch_2.push_Switch_status()
-Switch_3.push_Switch_status()
 
 while 1:
     Switch_1.check_switch_status()
     Switch_2.check_switch_status()
     Switch_3.check_switch_status()
-    time.sleep(0.3)                                                                                                                      
+    time.sleep(0.3)                                                                                                                                                                                                                  
+                                                                                                                                                                                                 135,19        Bot
+
+                                                                                                                                                                                                 77,33         63%
+
+                                                                                                                                                                                                 50,1          Top
+                                                                                                                  

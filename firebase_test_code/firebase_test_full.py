@@ -9,25 +9,25 @@ import binascii
 #Configuration of 3 ESP32's
 print("Connecting to ESP32_1...")
 dev = btle.Peripheral("98:F4:AB:6D:2C:86")
-dev.waitForNotifications(5)
+dev.waitForNotifications(3)
 print("Connecting to ESP32_2...")
 dev2 = btle.Peripheral("FC:F5:C4:0E:53:4A")
-dev2.waitForNotifications(5)
+dev2.waitForNotifications(3)
 print("Connecting to ESP32_3...")
 dev3 = btle.Peripheral("98:F4:AB:6E:61:42")
-dev3.waitForNotifications(5)
+dev3.waitForNotifications(3)
 
 #Service UUID used by all ESP32's
 ESP32 = btle.UUID("6E400001-B5A3-F393-E0A9-E50E24DCCA9E")
 print("service 1")
 ESP32Service = dev.getServiceByUUID(ESP32)
-time.sleep(1)
+time.sleep(0.5)
 print("servcice 2")
 ESP32Service2 = dev2.getServiceByUUID(ESP32)
-time.sleep(1)
+time.sleep(0.5)
 print("service 3")
 ESP32Service3 = dev3.getServiceByUUID(ESP32)
-time.sleep(1)
+time.sleep(0.5)
 
 #Write configuration for all ESP32's
 uuidConfig = btle.UUID("6E400002-B5A3-F393-E0A9-E50E24DCCA9E")
@@ -101,6 +101,22 @@ class Switch:
     def check_switch_status(self): #This will check the firebase for an update
         ref = db.reference('/')
         info = ref.child('Switches').child(self.name)
+        if (self.name == 'Switch_1'):
+            val = binascii.hexlify(ESP32Value.read())
+            print(val.decode('utf-8'))
+            if val.decode('utf-8') != self.read:
+                self.read = val.decode('utf-8')
+                self.push_Switch_status()
+        if (self.name == 'Switch_2'):
+            val2 = binascii.hexlify(ESP32Value2.read())
+            if val2.decode('utf-8') != self.read:
+                self.read = val2.decode('utf-8')
+                self.push_Switch_status()
+        if (self.name == 'Switch_3'):
+            val3 = binascii.hexlify(ESP32Value3.read())
+            if val3.decode('utf-8') != self.read:
+                self.read = val3.decode('utf-8')
+                self.push_Switch_status()
         if self.ML_status != info.get()['ML_status']:
             self.ML_status = info.get()['ML_status']
             print("ADD CODE HERE TO ENABLE OR DISABLE MACHINE LEARNING")
